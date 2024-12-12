@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel List</title>
+</head>
+<body>
+<h1>Travel List</h1>
+<a href="{% url 'home' %}"><button>Back to Home</button></a>
+<a href="{% url 'travels:create' %}"><button>Create Travel</button></a>
+{% for travel in travels %}
+    <ul>
+        <a href="{{ travel.get_detail_url }}"><li><h2>{{ travel.destination_name }}</h2></li></a>
+    </ul>
+{% empty %}
+    <h1>No Travels Yet!</h1>
+{% endfor %}
+</body>
+</html>

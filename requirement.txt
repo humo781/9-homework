@@ -1,0 +1,73 @@
+Boshlang'ich sozlamalar
+1. gitinore sozlash
+2. venv yaratish va aktivatsiya qilish
+3. django o'rnatish
+4. config nomli proyekt yaratish 9-homework loyihani ichida
+5. git add .gitignore, git commit -m "", git push origin main qilish (venv dan oldin yuborib qo'yish)
+6. python manage.py migrate (db.sqlite ni qo'shib qo'yish)
+7. python manage.py createsuperuser (agar admin panelga kirishga to'g'ri kelib qolsa xar ehtimol)
+
+Loyihaning config sozlamalari
+1. movies, sports, travel va music app larini yaratish
+2. config/settings.py da movies, sports, travel va music applarini installed_apps ga qo'shish
+3. config/settings.py da templates manzilini BASE_DIR orqali berish
+4. config/settings.py timezone ni 'Asia/Tashkent' ga to'g'irlash
+5. config/urls.py da applarning url larini ko'rsatish
+6. config/urls.py da home funksiyasini asosiy url ('') ga sozlash
+
+Asosiy kod yozish qismi
+1. templates directory yaratish
+2. templates ni ichida har bir app uchun yana alohida directory yaratish va ularni ichida har bir app uchun list,
+form, del_confirm va detail shablonlarini yaratish alohida home.html ham yaratish
+// 1-APP MOVIES
+3. movies/models.py da Movie modelini yaratish maydonlari(title, director, release_year, genre)
+    dinamik urllarni oluvchi funksiya yaratish (misol: get_detail_url(self): kabi)
+4. movies/admin.py da Movie modelini register qilish list_display orqali maydonlarini ham ko'rsatish
+5. movies/views.py da movies_list nomli funksiya yaratish(vazifasi: userga Movie modelidagi datani oladi va barcha movielar
+    ro'yxatini ko'rsatadi)
+    movie_detail nomli funksiya yaratish(vazifasi: listdagi ma'lum moviening ma'lumotini ko'rsatadi)
+    movie_create nomli funksiya yaratish(vazifasi:yangi movie yaratadi)
+    movie_delete nomli funksiya yaratish(vazifasi: mavjud movieni o'chiradi)
+    movie_update nomli funksiya yaratish(vazifasi: mavjud movieni yangilaydi)
+6. movies app da urls.py yaratish va movies/views.py dagi funsksiyalarga yo'nalish berish
+// 2-APP SPORTS
+7. sports/models.py da Sport modelini yaratish maydonlari(event_name, location, date, sport_type)
+    dinamik urllarni oluvchi funksiya yaratish (misol: get_detail_url(self): kabi)
+8. sports/admin.py da Sport modelini register qilish list_display orqali maydonlarini ham ko'rsatish
+9. sports/views.py da sports_list nomli funksiya yaratish(vazifasi: userga Sport modelidagi datani oladi va barcha sportlar
+    ro'yxatini ko'rsatadi)
+    sport_detail nomli funksiya yaratish(vazifasi: listdagi ma'lum sportning ma'lumotini ko'rsatadi)
+    sport_create nomli funksiya yaratish(vazifasi: yangi sport yaratadi)
+    sport_delete nomli funksiya yaratish(vazifasi: mavjud sportni o'chiradi)
+    sport_update nomli funksiya yaratish(vazifasi: mavjud sportni yangilaydi)
+10. sports app da urls.py yaratish va sports/views.py dagi funsksiyaga yo'nalish berish
+// 3-APP MUSIC
+11. musics/models.py da Music modelini yaratish maydonlari(album_title, artist, release_date, genre)
+     dinamik urllarni oluvchi funksiya yaratish (misol: get_detail_url(self): kabi)
+12. musics/admin.py da Music modelini register qilish list_display orqali maydonlarini ham ko'rsatish
+13. musics/views.py da musics_list nomli funksiya yaratish(vazifasi: userga Music modelidagi datani oladi va barcha sportlar
+    ro'yxatini ko'rsatadi)
+    music_detail nomli funksiya yaratish(vazifasi: listdagi ma'lum musicning ma'lumotini ko'rsatadi)
+    music_create nomli funksiya yaratish(vazifasi:yangi music yaratadi)
+    music_delete nomli funksiya yaratish(vazifasi: mavjud musicni o'chiradi)
+14. musics app da urls.py yaratish va musics/views.py dagi funsksiyaga yo'nalish berish
+// 4-APP TRAVEL
+15. travels/models.py da Travel modelini yaratish maydonlari(destination_name, country, description, popular_season)
+     dinamik urllarni oluvchi funksiya yaratish (misol: get_detail_url(self): kabi)
+16. travels/admin.py da Travel modelini register qilish list_display orqali maydonlarini ham ko'rsatish
+17. travels/views.py da travel_list nomli funksiya yaratish(vazifasi: userga Travel modelidagi datani oladi va barcha sportlar
+    ro'yxatini ko'rsatadi)
+    travels_detail nomli funksiya yaratish(vazifasi: listdagi ma'lum travelning ma'lumotini ko'rsatadi)
+    travel_create nomli funksiya yaratish(vazifasi:yangi travel yaratadi)
+    travel_delete nomli funksiya yaratish(vazifasi: mavjud travelsni o'chiradi)
+18. travels app da urls.py yaratish va travels/views.py dagi funsksiyalarga yo'nalish berish
+// Jadval yaratish
+19. python manage.py makemigrations va python manage.py migrate buyruqlari orqali modellarni ma'lumotlar bazasiga qoshish
+// Template yozish
+20. Templates dagi sports, musics, travels va movies papkalariga list, form, detail, del_confirm shablonlarini yaratish va html tag yozib
+    user ko'radigan sahifani chiroyliroq chiqarish
+
+// git rm -r --cached .idea (.idea ketib qolsa o'chirish uslubi, --cached mahalliy diskdagi fayllarni o'chirmaydi,
+faqat Git kuzatuvidan olib tashlaydi)
+
+/// ESLATMA:

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if movie.pk %} Update Movie {% else %} Create Movie {% endif %}</title>
+</head>
+<body>
+<h1>{% if movie.pk %} Update Movie {% else %} Create Movie {% endif %}</h1>
+<a href="{% if movie.pk %} {{ movie.get_detail_url }} {% else %} {% url 'movies:list' %} {% endif %}">
+    <button>{% if movie.pk %} Back to Detail {% else %} Back to List {% endif %}</button></a>
+<form method="post">
+    {% csrf_token %}
+    <label for="title">Title</label><br>
+    <input type="text" name="title" id="title" {% if movie.pk %} value="{{movie.title}}" {% endif %}><br><br>
+    <label for="director">Director</label><br>
+    <input type="text" name="director" id="director" {% if movie.pk %} value="{{movie.director}}" {% endif %}><br><br>
+    <label for="release_year">Release Year</label><br>
+    <input type="date" name="release_year" id="release_year" {% if movie.pk %} value="{{movie.release_year}}" {% endif %}><br><br>
+    <label for="genre">Genre</label><br>
+    <input type="text" name="genre" id="genre" {% if movie.pk %} value="{{movie.genre}}" {% endif %}><br><br>
+    <button type="submit">{% if movie.pk %} Update {% else %} Create {% endif %}</button>
+</form>
+</body>
+</html>

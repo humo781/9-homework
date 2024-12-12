@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sport detail</title>
+</head>
+<body>
+<h1>{{ sport.event_name }}</h1>
+<h2><strong>Location:</strong> {{ sport.location }}</h2>
+<h2><strong>Date:</strong> {{ sport.date }}</h2>
+<h2><strong>Sport_type:</strong> {{ sport.sport_type }}</h2>
+<a href="{{ sport.get_update_url }}"><button>Update</button></a>
+<a href="{{ sport.get_delete_url }}"><button>Delete</button></a>
+<a href="{% url 'sports:list' %}"><button>Back to List</button></a>
+</body>
+</html>

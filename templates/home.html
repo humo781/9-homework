@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Home Page</h1>
+    <ul>
+        <a href="{% url 'movies:list' %}"><li><h2>Movies List</h2></li></a>
+        <a href="{% url 'musics:list' %}"><li><h2>Musics List</h2></li></a>
+        <a href="{% url 'sports:list' %}"><li><h2>Sports List</h2></li></a>
+        <a href="{% url 'travels:list' %}"><li><h2>Travel List</h2></li></a>
+    </ul>
+</body>
+</html>

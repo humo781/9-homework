@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if sport.pk %} Update Sport {% else %} Create Sport {% endif %}</title>
+</head>
+<body>
+<h1>{% if sport.pk %} Update Sport {% else %} Create Sport {% endif %}</h1>
+<a href="{% if sport.pk %} {{ sport.get_detail_url }} {% else %} {% url 'sports:list' %} {% endif %}">
+    <button>{% if sport.pk %} Back to Detail {% else %} Back to List {% endif %}</button></a>
+<form method="post"><br>
+    {% csrf_token %}
+    <label for="event_name">Event Name</label><br>
+    <input type="text" name="event_name" id="event_name" {% if sport.pk %} value="{{sport.event_name}}" {% endif %}><br><br>
+    <label for="location">Location</label><br>
+    <input type="text" name="location" id="location" {% if movie.pk %} value="{{sport.location}}" {% endif %}><br><br>
+    <label for="date">Date</label><br>
+    <input type="date" name="date" id="date" {% if sport.pk %} value="{{sport.date}}" {% endif %}><br><br>
+    <label for="sport_type">Sport Type</label><br>
+    <input type="text" name="sport_type" id="sport_type" {% if sport.pk %} value="{{sport.sport_type}}" {% endif %}><br><br>
+    <button type="submit">{% if sport.pk %} Update {% else %} Create {% endif %}</button>
+</form>
+</body>
+</html>
+
+<!--// forma tayyor del_confirm bilan detail ga yozsam qolgani boshqa applarga kodlarni nusxalab chiqish kerak-->

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if music.pk %} Update Music {% else %} Create Music {% endif %}</title>
+</head>
+<body>
+<h1>{% if music.pk %} Update Music {% else %} Create Music {% endif %}</h1>
+<a href="{% if music.pk %} {{ music.get_detail_url }} {% else %} {% url 'musics:list' %} {% endif %}">
+    <button>{% if music.pk %} Back to Detail {% else %} Back to List {% endif %}</button></a>
+<form method="post"><br>
+    {% csrf_token %}
+    <label for="album_title">Album Title</label><br>
+    <input type="text" name="album_title" id="album_title" {% if music.pk %} value="{{music.album_title}}" {% endif %}><br><br>
+    <label for="artist">Artist</label><br>
+    <input type="text" name="artist" id="artist" {% if music.pk %} value="{{music.artist}}" {% endif %}><br><br>
+    <label for="genre">Genre</label><br>
+    <input type="text" name="genre" id="genre" {% if music.pk %} value="{{music.genre}}" {% endif %}><br><br>
+    <label for="release_date">Release Date</label><br>
+    <input type="date" name="release_date" id="release_date" {% if music.pk %} value="{{music.release_date}}" {% endif %}><br><br>
+    <button type="submit">{% if music.pk %} Update {% else %} Create {% endif %}</button>
+</form>
+</body>
+</html>
